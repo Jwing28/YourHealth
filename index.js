@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('.activityLvl').on('click','a',function(event){
     event.preventDefault();
-    $('.activityLvl a').removeClass('activitySelected');
-    $(this).addClass('activitySelected');
+    $('.activityLvl a').removeClass('bg-success');
+    $(this).addClass('bg-success');
   });
 })
