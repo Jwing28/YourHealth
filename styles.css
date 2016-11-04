@@ -1,0 +1,31 @@
+form > input {
+  margin-bottom: 10px;
+}
+
+.navbar-nav > li > a {
+  font-size: 25px;
+}
+
+.activityLvl > a {
+  display: block;
+  padding: 5px;
+  border:1px solid black;
+  border-radius: 5%;
+  font-size: 1.5em;
+}
+
+/*.activityLvl > a:hover {
+  background-color: lightgray;
+}*/
+
+.activityLvl > a:onClick {
+  background-color: lightgreen;
+}
+
+.btn-md {
+  margin-top: 10px;
+}
+
+.activitySelected {
+  background-color: lightgreen;
+}
