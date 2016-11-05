@@ -2,6 +2,7 @@ form > input {
   margin-bottom: 25px;
 }
 
+/*NAV BAR*/
 .navbar-dark {
   margin-bottom: 25px;
 }
@@ -9,15 +10,17 @@ form > input {
 .navbar-nav > li > a {
   font-size: 25px;
 }
+/*------*/
 
-.activityLvl > a {
-  display: block;
+.activityLvl {
+  margin-right: auto;
+  margin-left: auto;
   padding: 5px;
   border-radius: 5%;
-  font-size: 1.5em;
+  font-size: 1.5em;  
 }
 
-.activityLvl > a:hover {
+.activity:hover {
   background-color: lightgray;
 }
 
