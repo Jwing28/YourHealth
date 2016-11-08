@@ -28,12 +28,12 @@ $(document).ready(function() {
 
 //BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) + 5
   function bmrMen (height, weight, age) {
-    return ((22 * weight) + (2.46 * height) - (5 * age) + 5).toFixed(2);
+    return ((5 * weight) + (8.5 * height) - (5 * age) + 5).toFixed(2);
   }
 
 //BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) - 161
   function bmrWomen(height, weight, age) {
-    return ((22 * weight) + (2.46 * height) - (5 * age) - 161).toFixed(2);
+    return ((5 * weight) + (8.5 * height) - (5 * age) - 161).toFixed(2);
   }  
 
   function maintainWeight(bmr, multiplier){
