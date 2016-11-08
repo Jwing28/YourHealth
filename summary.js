@@ -1,11 +1,42 @@
 $(document).ready(function() {
   var results = {};
-
+  var bmr = 0;
   results.name = localStorage.getItem('name');
   results.sex = localStorage.getItem('sex');
   results.age = localStorage.getItem('age'); 
   results.height = localStorage.getItem('height');
   results.weight = localStorage.getItem('weight');
   results.multiplier = localStorage.getItem('activityMultiplier');
-  $('.results').append(JSON.stringify(results));
+  
+  $('#name').append(" " + results.name);
+  $('#sex').append(" " + results.sex);
+  $('#age').append(" " + results.age);
+  $('#height').append(" " + results.height);
+  $('#weight').append(" " + results.weight);
+
+  $('#bmi').append(Math.round((results.weight / (Math.pow(results.height,2)) ) * 703));
+
+  if(results.sex === 'male') {
+    bmr = bmrMen(results.height, results.weight, results.age)
+    $('#bmr').append(bmr);
+  }else {
+    bmr = bmrWomen(results.height, results.weight, results.age);
+    $('#bmr').append(bmr);
+  }
+
+  $('#maintenance').append('Calories/day to maintain weight: ' + maintainWeight(bmr, results.multiplier));
+
+//BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) + 5
+  function bmrMen (height, weight, age) {
+    return ((22 * weight) + (2.46 * height) - (5 * age) + 5).toFixed(2);
+  }
+
+//BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) - 161
+  function bmrWomen(height, weight, age) {
+    return ((22 * weight) + (2.46 * height) - (5 * age) - 161).toFixed(2);
+  }  
+
+  function maintainWeight(bmr, multiplier){
+    return (bmr * multiplier).toFixed(2);
+  }
 });
