@@ -26,12 +26,12 @@ $(document).ready(function() {
 
   $('#maintenance').append('Calories/day to maintain weight: ' + maintainWeight(bmr, results.multiplier));
 
-//BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) + 5
+  //BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) + 5
   function bmrMen (height, weight, age) {
     return ((5 * weight) + (8.5 * height) - (5 * age) + 5).toFixed(2);
   }
 
-//BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) - 161
+  //BMR = (10 × weight in kg) + (6,25 × height in cm) - (5 × age in years) - 161
   function bmrWomen(height, weight, age) {
     return ((5 * weight) + (8.5 * height) - (5 * age) - 161).toFixed(2);
   }  
@@ -39,4 +39,15 @@ $(document).ready(function() {
   function maintainWeight(bmr, multiplier){
     return (bmr * multiplier).toFixed(2);
   }
+
+  // d3
+  d3.select('.d3')
+    .append('svg')
+    .attr('height',50)
+    .attr('weight',50)
+    .append('circle')
+    .attr('cx',25)
+    .attr('cy',25)
+    .attr('r',5)
+    .style('fill','purple')
 });
