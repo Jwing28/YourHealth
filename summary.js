@@ -75,6 +75,7 @@ $(document).ready(function() {
                           .attr('width', function(d) {
                             return typeof d === 'object' ? 25 * 10:d * 10;
                           })
+                          .style("margin-top", "10px")
                           .style('fill',function(d) {
                             return d < 25 ? 'lightblue':'gray';
                           });                                   
@@ -101,6 +102,7 @@ $(document).ready(function() {
                           .attr('width', function(d) {
                             return d.limit * 10 || d.user * 10;
                           })
+                          .style("margin-top", "10px")
                           .style('fill',function(d) {
                             if(d.limit > 35){
                               return 'darkred';
