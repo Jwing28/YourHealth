@@ -90,32 +90,16 @@ $(document).ready(function() {
 
   var rectAttributesBMR = rectanglesBMR
                           .attr('x',function (d) {
-                            if(d.limit || d.limit){
-                              return d.limit;
-                            }else {
-                              return d.user;
-                            }
+                            return d.limit || d.user;
                           })
                           .attr('y',function (d) {
-                            if(d.limit || d.limit){
-                              return d.limit;
-                            }else {
-                              return d.user;
-                            }
+                            return d.limit || d.user;
                           })
                           .attr('height', function(d) {
-                            if(d.limit || d.limit){
-                              return d.limit / 5;
-                            }else {
-                              return d.user / 5;
-                            }
+                            return d.limit / 2 || d.user / 2;
                           })
                           .attr('width', function(d) {
-                            if(d.limit || d.limit){
-                              return d.limit * 10;
-                            }else {
-                              return d.user * 10;
-                            }
+                            return d.limit * 10 || d.user * 10;
                           })
                           .style('fill',function(d) {
                             if(d.limit > 35){
@@ -124,7 +108,7 @@ $(document).ready(function() {
                               return 'gray';
                             }
                             return 'lightblue'
-                          })                            
+                          });                            
 
 
 
